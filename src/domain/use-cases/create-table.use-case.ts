@@ -9,12 +9,12 @@ export interface CreateTableOptions {
 export class CreateTable implements CreateTableUseCase {
   constructor() /**
    * DI - Dependency Injection
-   */
-  {}
+   */ {}
   execute({ base, limit = 10 }: CreateTableOptions) {
     let ouptMessage = ''
-    for (let i = 0; i <= limit; i++) {
-      ouptMessage += ` ${base} x ${i} = ${base * i}\n`
+    for (let i = 1; i <= limit; i++) {
+      ouptMessage += `${base} x ${i} = ${base * i}`
+      if (i < limit) ouptMessage += '\n'
     }
     return ouptMessage
   }

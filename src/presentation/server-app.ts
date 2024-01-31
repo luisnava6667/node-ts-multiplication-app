@@ -17,7 +17,7 @@ export class ServerApp {
     fileDestination,
     fileName
   }: RunOptions) {
-    console.log('Server running ....')
+    console.log('Server running...')
     const table = new CreateTable().execute({ base, limit })
     const wasCreated = new SaveFiles().execute({
       fileContent: table,
